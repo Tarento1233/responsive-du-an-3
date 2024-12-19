@@ -1,0 +1,59 @@
+/* PC trường hợp mày quên thì min-width trong trường hợp này để là từ 992 trở lên nó sẽ tác dụng thuộc tính trong media*/
+@media (min-width: 992px) {
+}
+/* mobile and Tablet, này code chung thuộc tính, max-width thì từ 991.98 trở xuống thì sử dụng thuộc tính trên media*/
+@media (max-width: 991.98px) {
+  .navbar {
+    display: none;
+    /* này là muốn khi nó có kích thước giống từ máy tính bảng thì sẽ ẩn navbar */
+  }
+  /* chuyển logo vào giữa */
+  .header-top {
+    position: relative;
+  }
+  .header__logo {
+    position: absolute;
+    left: 50%; /*sau khi nó cách trái cái nó lệch cmn nó xuống dưới lun  */
+    translate: -50% -50%; /*nên dùng cách này để canh lại, mặc dù tao thấy sài trans-y là đc rồi  */
+  }
+  /* căn lại vị trí menu icon*/
+  .menu-header__icon {
+    position: absolute;
+    top: 38px;
+    left: 26px;
+    color: #fff;
+    width: 24px;
+    cursor: pointer;
+  }
+  /* overplay */
+  .menu-overplay {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.3);
+    inset: 0;
+    /* inset:0 này là nó cách 4 cạnh là 0, nói chung để dễ hiểu thì nhập npx ấy
+    và nó giống thuộc tính padding kiểu n1px n2px n3px n4px */
+    z-index: 1;
+    opacity: 0;
+    /* opacity 0(trong suốt) và visibility: hidden(ẩn đi mà vẫn còn chiếm diện tích) để ẩn đi nhưng vẫn tương tác đc các phần tử xung quanh*/
+    visibility: hidden;
+    transition: 0.5s;
+  }
+  /* kiểm tra menu-checkbox có checked hay ko */
+  .menu-checkbox:checked ~ .menu-overplay {
+    opacity: 1;
+    visibility: visible;
+    /* thuộc tính visibility: visible; được sử dụng để làm cho phần tử hiển thị trở lại, nếu nó đã bị ẩn đi trước đó với visibility: hidden; */
+  }
+}
+/*  Tablet này riêng cho máy tính bản */
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+/* mobile này riêng cho phone*/
+@media (max-width: 767.98px) {
+}
+/*  */
+.hero,
+.footer,
+main {
+  display: none;
+}

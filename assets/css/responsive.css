@@ -1,5 +1,8 @@
-/* PC trường hợp mày quên thì min-width trong trường hợp này để là từ 992 trở lên nó sẽ tác dụng thuộc tính trong media*/
+/* PC, trường hợp mày quên thì min-width trong trường hợp này để là từ 992 trở lên nó sẽ tác dụng thuộc tính trong media*/
 @media (min-width: 992px) {
+  .mobile-header {
+    display: none;
+  }
 }
 /* mobile and Tablet, này code chung thuộc tính, max-width thì từ 991.98 trở xuống thì sử dụng thuộc tính trên media*/
 @media (max-width: 991.98px) {
@@ -13,8 +16,8 @@
   }
   .header__logo {
     position: absolute;
-    left: 50%; /*sau khi nó cách trái cái nó lệch cmn nó xuống dưới lun  */
-    translate: -50% -50%; /*nên dùng cách này để canh lại, mặc dù tao thấy sài trans-y là đc rồi  */
+    left: 25%; /*sau khi nó cách trái cái nó lệch cmn nó xuống dưới lun  */
+    translate: -50% -50%; /*nên dùng cách này để canh lại, mặc dù tao thấy sài translate-y là đc rồi  */
   }
   /* căn lại vị trí menu icon*/
   .menu-header__icon {
@@ -28,14 +31,16 @@
   /* overplay */
   .menu-overplay {
     position: fixed;
+    /* Khi sử dụng position: fixed;, phần tử sẽ không di chuyển khi bạn cuộn trang, và luôn giữ nguyên vị trí 
+    ngay cả khi người dùng cuộn xuống hay cuộn lên. */
     background: rgba(0, 0, 0, 0.3);
     inset: 0;
     /* inset:0 này là nó cách 4 cạnh là 0, nói chung để dễ hiểu thì nhập npx ấy
     và nó giống thuộc tính padding kiểu n1px n2px n3px n4px */
     z-index: 1;
     opacity: 0;
-    /* opacity 0(trong suốt) và visibility: hidden(ẩn đi mà vẫn còn chiếm diện tích) để ẩn đi nhưng vẫn tương tác đc các phần tử xung quanh*/
     visibility: hidden;
+    /* opacity 0(trong suốt) và visibility: hidden(ẩn đi mà vẫn còn chiếm diện tích) để ẩn đi nhưng vẫn tương tác đc các phần tử xung quanh*/
     transition: 0.5s;
   }
   /* kiểm tra menu-checkbox có checked hay ko */
@@ -43,6 +48,47 @@
     opacity: 1;
     visibility: visible;
     /* thuộc tính visibility: visible; được sử dụng để làm cho phần tử hiển thị trở lại, nếu nó đã bị ẩn đi trước đó với visibility: hidden; */
+  }
+  /* code phần menu drawer */
+  .menu-drawer {
+    position: fixed;
+    padding: 60px;
+    background: #2c2424;
+    inset: 0 40% 0 0;
+    z-index: 2;
+    transform: translateX(-100%);
+    /* cho nó thụt sát bên lề bên tay trái */
+    transition: 0.5s;
+  }
+
+  /* nếu checkbox đc checked thì hiện menu-drawer */
+  .menu-checkbox:checked ~ .menu-drawer {
+    transform: translateX(0);
+    /* bấm vô menu cái nó trở lại inset: 0 40% 0 0 */
+  }
+
+  /* menu top */
+  .close__menu {
+    width: 24px;
+    color: #fff;
+    cursor: pointer;
+  }
+  .menu-drawer__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #navbar__link--mobile {
+    margin-top: 25px;
+  }
+  .navbar__item {
+    margin-top: 25px;
+  }
+  .navbar__link {
+    display: block;
+  }
+  .navbar__link:hover {
+    background-color: #e4e4e937;
   }
 }
 /*  Tablet này riêng cho máy tính bản */

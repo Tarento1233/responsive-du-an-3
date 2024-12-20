@@ -90,6 +90,51 @@
   .navbar__link:hover {
     background-color: #e4e4e937;
   }
+
+  /* hero */
+  .hero {
+    flex-direction: column;
+    /* row: Các phần tử được sắp xếp theo chiều ngang, từ trái sang phải.
+      row-reverse: Các phần tử được sắp xếp theo chiều ngang, từ phải sang trái.
+      column: Các phần tử được sắp xếp theo chiều dọc, từ trên xuống dưới.
+       column-reverse: Các phần tử được sắp xếp theo chiều dọc, từ dưới lên trên. */
+    gap: 50px;
+  }
+  .hero__content {
+    order: 2;
+    /* order được sử dụng trong flexbox để thay đổi thứ tự (sắp xếp) của các phần tử con trong một container 
+    mà không cần thay đổi cấu trúc HTML.
+    Các phần tử có giá trị order thấp sẽ được hiển thị trước các phần tử có giá trị order cao hơn. */
+    width: 80%;
+    /* chỉnh kích thước lại cho nó mượt mà thôi */
+    text-align: center;
+    margin: 22px auto;
+  }
+  .hero__media {
+    order: 1;
+  }
+  .hero__row {
+    justify-content: center;
+  }
+
+  /* service */
+  .service__row {
+    flex-direction: column;
+  }
+
+  .service__img {
+    width: 100%;
+  }
+  .service__list {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .service-item {
+    width: 90%;
+    text-align: start;
+    /* canh trái thôi, nói chung là do muốn canh giữa cái nút nên phải text-align:center nguyên 1 khối,
+    mà làm vậy nó tác động lun các phần tử phía trên nên muốn nó như cũ phải text align:start */
+  }
 }
 /*  Tablet này riêng cho máy tính bản */
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -98,8 +143,7 @@
 @media (max-width: 767.98px) {
 }
 /*  */
-.hero,
-.footer,
-main {
+
+.footer {
   display: none;
 }

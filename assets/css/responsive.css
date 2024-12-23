@@ -182,15 +182,52 @@
   .install__content {
     position: absolute;
   }
+
+  /* blog */
+  .blog__inner {
+    flex-direction: column;
+    row-gap: 50px;
+  }
+  .blog__list {
+    order: 1;
+  }
+  .blog__content {
+    order: 2;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .blog__heading {
+    white-space: nowrap;
+    max-width: 110%;
+  }
+  .cot1 {
+    display: none;
+  }
+  .footer__top {
+    grid-template-columns: 1fr 0.5fr 0.5fr;
+    /* max-width: 90%; */
+  }
+  .footer-form {
+    display: block;
+  }
+  .footer-form__submit {
+    margin: 25px 0;
+  }
 }
 /*  Tablet này riêng cho máy tính bản */
 @media (min-width: 768px) and (max-width: 991.98px) {
+  /* footer */
+  .cot1 {
+    display: none;
+  }
+  .footer__top {
+    grid-template-columns: 0.5fr 0.5fr 1fr;
+    /* max-width: 90%; */
+  }
 }
 /* mobile này riêng cho phone*/
 @media (max-width: 767.98px) {
 }
 /*  */
-
-.footer {
-  display: none;
-}

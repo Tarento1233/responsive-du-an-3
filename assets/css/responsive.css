@@ -28,6 +28,7 @@
     width: 24px;
     cursor: pointer;
   }
+
   /* overplay */
   .menu-overplay {
     position: fixed;
@@ -40,13 +41,16 @@
     z-index: 1;
     opacity: 0;
     visibility: hidden;
-    /* opacity 0(trong suốt) và visibility: hidden(ẩn đi mà vẫn còn chiếm diện tích) để ẩn đi nhưng vẫn tương tác đc các phần tử xung quanh*/
+    /* display: none; sài cái này thì ẩn cái visibility đi */
+    /* opacity 0(trong suốt) và visibility: hidden(ẩn đi mà vẫn còn chiếm diện tích) để ẩn đi nhưng vẫn tương tác đc các phần tử xung quanh
+    hmmm tao mới phát hiện ra là visibility: hidden; trong trường hợp này giúp khi mày lỡ bấm bất kỳ chỗ nào nó sẽ ko hiện ra menu*/
     transition: 0.5s;
   }
   /* kiểm tra menu-checkbox có checked hay ko */
   .menu-checkbox:checked ~ .menu-overplay {
     opacity: 1;
     visibility: visible;
+    /* display: block; */
     /* thuộc tính visibility: visible; được sử dụng để làm cho phần tử hiển thị trở lại, nếu nó đã bị ẩn đi trước đó với visibility: hidden; */
   }
   /* code phần menu drawer */
@@ -134,6 +138,33 @@
     text-align: start;
     /* canh trái thôi, nói chung là do muốn canh giữa cái nút nên phải text-align:center nguyên 1 khối,
     mà làm vậy nó tác động lun các phần tử phía trên nên muốn nó như cũ phải text align:start */
+  }
+  /* work */
+  .work__list {
+    grid-template-columns: 1fr;
+    /* do cái phần work sài grid */
+    row-gap: 30px;
+  }
+  /* about */
+  .about-row {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+  .about__media {
+    width: 100%;
+    /* do cái khối này bên pc có 44% thôi nên phải tăng nó lên 100% để cho ảnh nó 100% lun */
+  }
+  .about__img--big {
+    width: 100%;
+    border-radius: 15px;
+    margin: 25px auto;
+  }
+  .about__img--small {
+    display: none;
+  }
+  .about-content {
+    width: 90%;
+    text-align: center;
   }
 }
 /*  Tablet này riêng cho máy tính bản */

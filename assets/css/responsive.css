@@ -206,7 +206,7 @@
     display: none;
   }
   .footer__top {
-    grid-template-columns: 1fr 0.5fr 0.5fr;
+    grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr;
     /* max-width: 90%; */
   }
   .footer-form {
@@ -226,8 +226,114 @@
     grid-template-columns: 0.5fr 0.5fr 1fr;
     /* max-width: 90%; */
   }
+  .show-on-mobile {
+    display: none;
+  }
+  .appontment__heading::after {
+    display: block;
+    margin: 18px auto;
+  }
 }
 /* mobile này riêng cho phone*/
 @media (max-width: 767.98px) {
+  /* ẩn cmn phần sign up, log in  */
+  .header__action {
+    display: none;
+  }
+  .header__logo {
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    translate: -50% -50%;
+  }
+  .menu-drawer {
+    padding: 20px;
+    inset: 0 18% 0 0;
+  }
+  .navbar__item {
+    list-style: none;
+  }
+  .separate {
+    border-top: 1.5px solid #8c8b8b;
+    margin-top: 10px;
+  }
+  .hero__img--small {
+    display: none;
+  }
+  .hero__img--large {
+    width: 100%;
+    height: auto;
+    /* Khi bạn thiết lập height: auto, chiều cao của phần tử sẽ thay đổi theo kích thước của nội dung (text, ảnh, hoặc các phần tử con) bên trong.
+      Điều này có nghĩa là nếu nội dung thay đổi, chiều cao của phần tử cũng sẽ tự động điều chỉnh để phù hợp. */
+  }
+  .hero__heading {
+    font-size: 3rem;
+  }
+  .hero__row {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  .service {
+    margin: 72px 0;
+  }
+  .section-heading {
+    font-size: 4rem;
+  }
+  .section-desc {
+    width: auto;
+    /* giống cái height:auto */
+  }
+  .service__img {
+    height: auto;
+  }
+  .work-item {
+    padding: 15px;
+  }
+  .about {
+    margin-top: 20px;
+    padding: 40px 0;
+  }
+  .about-row .section-desc {
+    font-size: 1.6rem;
+  }
+  .team__list {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+
+  .install {
+    margin: 40px 0;
+    padding: 0 8px;
+    width: 100%;
+    height: auto;
+  }
+  .install__content {
+    min-width: 250px;
+    left: 17px;
+    top: 100px;
+  }
+  .install__content .section-heading {
+    font-size: 3rem;
+  }
+  .blog__list {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
+  .blog__heading {
+    white-space: wrap;
+    text-align: center;
+  }
+  .appointment__inner {
+    padding: 30px 5px;
+  }
+  .appontment__heading::after {
+    display: block;
+    margin: 18px auto;
+  }
+  .footer__top {
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+  }
 }
-/*  */
+/*ẩn những phần ko cần thiết  */

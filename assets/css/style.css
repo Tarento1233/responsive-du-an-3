@@ -129,10 +129,11 @@ a {
 .hero__content {
   width: 44%;
 }
-
+.hero__media {
+  flex: 1;
+}
 .hero__heading {
   color: #fff;
-  min-width: 517px;
   font-size: 7rem;
   font-style: normal;
   font-weight: 600;
@@ -421,15 +422,14 @@ a {
   padding: 150px 0 85px;
 }
 .install__iner {
+  margin: 180px 0 85px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 70px;
-  /* này là để đệm bên trái phải 70px, tại m sài   justify-content: space-between; là nó sát 2 cạnh 2 bên lun*/
-  width: 1170px;
   height: 427px;
-  flex-shrink: 0;
+  border-radius: 4px;
   background: #2e80ce;
 }
 .install__img {
@@ -440,7 +440,7 @@ a {
   object-fit: cover;
 }
 .install__content {
-  max-width: 586px;
+  min-width: 586px;
 }
 .install__heading {
   max-width: 489px;
